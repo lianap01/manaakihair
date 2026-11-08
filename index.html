@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Manaaki Hair and Beauty, a boutique hair salon at 92a Mountain Road, Māngere Bridge, Tāmaki Makaurau Auckland. Colour, cuts, keratin and Nanoplasty.">
+<title>Manaaki Hair and Beauty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&display=swap">
+<style>
+/* Layout: the Mailchimp email, scaled up — chocolate band header with spaced wordmark, bronze rule, cream sheets, stone offer cards, chocolate + olive footer. Single brand look in both themes. */
+:root{
+  --choc:#3B2A20; --bronze:#A67B4F; --cream:#FAF6F0; --stone:#EFE7DC;
+  --card:#EDE3D6; --line:#D9C8B4; --ink:#4A3A2F; --muted:#8A7564;
+  --on-dark:#F5EFE6; --on-dark-soft:#CFC3B4; --tan:#C9A27A; --olive:#333A24;
+  --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --wrap:1080px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;margin:0}
+a{color:var(--bronze)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--choc);text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+.label{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze)}
+.rule{width:48px;height:1px;background:var(--bronze);margin-inline:auto}
+.btn{display:inline-block;background:var(--choc);color:var(--on-dark);text-decoration:none;font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;padding:16px 36px;border:1px solid var(--choc);transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--choc)}
+.btn.light{background:var(--on-dark);color:var(--choc);border-color:var(--on-dark)}
+.btn.light:hover{background:transparent;color:var(--on-dark)}
+
+/* Header band */
+header{background:var(--choc);color:var(--on-dark);position:sticky;top:env(safe-area-inset-top,0px);z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.mark{font-family:var(--serif);font-size:24px;letter-spacing:.42em;color:var(--on-dark);text-decoration:none;padding-left:.42em}
+nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;flex-wrap:wrap}
+nav a{color:var(--on-dark-soft);text-decoration:none;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+nav a:hover{color:var(--on-dark)}
+nav a.book{color:var(--tan)}
+.bronze-line{height:4px;background:var(--bronze)}
+
+/* Hero */
+.hero{background:var(--choc);color:var(--on-dark);text-align:center;padding-block:72px 64px}
+.hero .wordmark{font-family:var(--serif);font-weight:500;font-size:clamp(48px,10vw,104px);letter-spacing:.24em;padding-left:.24em;line-height:1;color:var(--on-dark)}
+.hero .sub{margin-top:18px;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--tan)}
+.hero .greet{margin-top:34px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,28px);color:var(--on-dark)}
+.hero .btn{margin-top:30px}
+
+/* Sheets */
+main{padding-block:40px}
+.sheet{background:var(--cream);max-width:var(--wrap);margin-inline:auto;padding:64px clamp(20px,6vw,72px)}
+.sheet + .sheet{border-top:1px solid var(--line)}
+.head{text-align:center;display:grid;gap:14px;margin-bottom:40px}
+.head h2{font-size:clamp(34px,5vw,46px);line-height:1.1}
+.head h2 em{font-style:italic}
+.lede{max-width:62ch;margin-inline:auto;text-align:center;display:grid;gap:16px}
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.person{border:1px solid var(--line);padding:32px 28px;display:grid;gap:12px;align-content:start}
+.person h3{font-size:30px}
+.person .role{margin-top:-8px}
+.person .iwi{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--choc);line-height:1.5}
+
+/* Service menu */
+.menu-note{text-align:center;color:var(--muted);font-size:14px;max-width:60ch;margin:0 auto 36px}
+.stylists{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px;align-items:start}
+.stylist{background:var(--card);border:1px solid var(--line);padding:32px 26px;min-width:0}
+.stylist .sh{display:grid;gap:6px;text-align:center;margin-bottom:22px}
+.stylist h3{font-size:30px}
+.group{margin-top:22px}
+.group h4{margin:0 0 8px;font-family:var(--sans);font-weight:700;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--bronze);border-bottom:1px solid var(--line);padding-bottom:6px}
+.row{display:flex;justify-content:space-between;gap:14px;padding-block:5px;font-size:15px}
+.row span:first-child{min-width:0}
+.row span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--choc);font-weight:700;text-align:right}
+.tiers{display:block;font-size:13px;color:var(--muted);font-weight:400}
+.fine{margin-top:18px;font-size:13px;color:var(--muted);font-style:italic}
+
+/* Offers */
+.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.offer{background:var(--card);border:1px solid var(--line);padding:36px 28px;text-align:center;display:grid;gap:12px;align-content:start}
+.offer h3{font-size:30px;line-height:1.15}
+.offer .big{font-family:var(--serif);font-size:24px;color:var(--choc);font-style:italic}
+.offer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:15px}
+.offer .small{font-size:13px;color:var(--muted)}
+
+/* Photos */
+.banner{margin:0;background:var(--choc)}
+.banner{max-width:var(--wrap);margin:40px auto 0;padding-inline:20px;background:none}
+.banner video{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--choc)}
+.banner{position:relative}
+.banner::after{content:"";position:absolute;inset:0 20px;background:var(--olive,#333A24);mix-blend-mode:multiply;opacity:.5;pointer-events:none}
+.welcome-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,56px);align-items:center}
+.welcome-grid .head{text-align:left;margin-bottom:22px}
+.welcome-grid .rule{margin-inline:0}
+.welcome-grid .lede{text-align:left;margin:0}
+.photo{margin:0;border:1px solid var(--line);background:var(--card);padding:10px}
+.photo img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:900px;margin-inline:auto}
+.gallery img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+@media (max-width:760px){.welcome-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}}
+.portrait{margin:-32px -28px 8px;background:var(--card)}
+.portrait img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 25%}
+.monogram{aspect-ratio:4/5;display:grid;place-content:center;justify-items:center;gap:10px;background:var(--choc);color:var(--on-dark)}
+.monogram span{font-family:var(--serif);font-size:96px;line-height:1;font-style:italic}
+.monogram small{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--tan)}
+.clips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1000px;margin-inline:auto}
+.clip{margin:0;display:grid;gap:12px;text-align:center}
+.clip video{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:var(--choc)}
+.cw{position:relative;display:block}
+.cw::before,.cw::after{content:"";position:absolute;inset:0;background:var(--olive,#333A24);pointer-events:none}
+.cw::after{mix-blend-mode:color;opacity:.25}
+.cw::before{display:none}
+@media (max-width:760px){.clips{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.clip .label{font-size:10px;letter-spacing:.16em}}
+/* Reviews */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
+blockquote{margin:0;display:grid;gap:12px}
+blockquote p{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--choc);font-style:italic}
+blockquote cite{font-style:normal;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze)}
+
+/* Footer */
+footer{background:var(--choc);color:var(--on-dark-soft)}
+.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;padding-block:56px}
+.foot h4{margin:0 0 12px;font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--tan)}
+.foot p,.foot li{font-size:15px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-variant-numeric:tabular-nums}
+.foot a{color:var(--on-dark)}
+.foot .mark{font-size:22px;display:inline-block;margin-bottom:12px}
+.olive{background:var(--olive);color:var(--on-dark-soft);text-align:center;font-size:12px;letter-spacing:.14em;padding-block:16px}
+
+@media (max-width:640px){
+  nav ul{gap:14px}
+  .bar{justify-content:center}
+  .sheet{padding-block:48px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top">MANAAKI</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#menu">Service menu</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="book" href="https://bookings.gettimely.com/manaakihairandbeauty2/bb/book" target="_blank" rel="noopener">Book</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="bronze-line"></div>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="wordmark">MANAAKI</div>
+    <div class="sub">Hair &amp; Beauty &nbsp;·&nbsp; Māngere Bridge</div>
+    <p class="greet">Nau mai, haere mai</p>
+    <a class="btn light" href="https://bookings.gettimely.com/manaakihairandbeauty2/bb/book" target="_blank" rel="noopener">Book your visit</a>
+  </div>
+</section>
+<figure class="banner"><video src="salon-banner.mp4" poster="salon-banner.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Slow pan along the styling chairs, mirrors and plants in the salon"></video></figure>
+
+<main>
+  <section class="sheet" id="welcome">
+    <div class="head">
+      <span class="label">Welcome to the salon</span>
+      <h2>Care that goes<br><em>above and beyond</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="lede">
+      <p>Nau mai, haere mai and welcome to our salon. Our mission is to deliver exceptional care and service, creating an experience like no other. Our talented and creative team is here to bring your hair dreams to life, tailoring each service to your unique needs and desires.</p>
+      <p>Whether it’s achieving your perfect look or tackling complex colour corrections, we thrive on creativity and embrace every challenge with expertise. We take pride in transforming hair and exceeding expectations, so you leave with confidence and satisfaction.</p>
+    </div>
+  </section>
+
+  <section class="sheet" id="experience">
+    <div class="head">
+      <span class="label">The Manaaki experience</span>
+      <h2>Sit back, <em>we’ve got you</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="clips">
+      <figure class="clip">
+        <span class="cw"><video src="coffee.mp4" poster="coffee.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A fresh coffee being brought to a client in the chair"></video></span>
+        <figcaption class="label">A cuppa on us</figcaption>
+      </figure>
+      <figure class="clip">
+        <span class="cw"><video src="styling.mp4" poster="styling.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Liana finishing a client's styled updo among the salon plants"></video></span>
+        <figcaption class="label">Styled with care</figcaption>
+      </figure>
+      <figure class="clip">
+        <span class="cw"><video src="relax.mp4" poster="relax.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A client in setting rollers relaxing with a magazine"></video></span>
+        <figcaption class="label">Room to relax</figcaption>
+      </figure>
+      <figure class="clip">
+        <span class="cw"><video src="client-laptop.mp4" poster="client-laptop.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A client in foils working on her laptop while her colour develops"></video></span>
+        <figcaption class="label">Work while you wait</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sheet" id="team">
+    <div class="head">
+      <span class="label">Meet the team</span>
+      <h2>The hands behind <em>Manaaki</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="team">
+      <article class="person">
+        <figure class="portrait"><img src="liana.jpg" alt="Liana, salon owner and advanced stylist, seated in the salon" loading="lazy" width="800" height="1000"></figure>
+        <h3>Liana</h3>
+        <span class="label role">Salon owner &amp; Advanced Stylist</span>
+        <p>Kia ora! I’m a passionate stylist with over 15 years of experience and the proud owner of our salon for the past 6 years. Helping clients feel confident and beautiful is my ultimate joy!</p>
+        <p class="iwi">Nō Hauraki ahau, ā, ko Ngāti Tamaterā, Ngāpuhi, me Ngāti Rangiwewehi ōku iwi.</p>
+      </article>
+      <article class="person">
+        <figure class="portrait"><img src="shayla.jpg" alt="Shayla, senior stylist, seated in the salon" loading="lazy" width="800" height="1000"></figure>
+        <h3>Shayla</h3>
+        <span class="label role">Senior Stylist</span>
+        <p>Hey! I’m Shayla, my skills and passion are creating the perfect blondes! I’m an excellent colourist and enjoy colour corrections, balayage and anything that involves lightening.</p>
+        <p class="iwi">I te taha o tōku Pāpā ko Ngāti Kahu me Ngāti Whanaunga ōku iwi. I te taha o tōku Māmā ko Tainui me Te Atiawa ōku iwi.</p>
+      </article>
+      <article class="person">
+        <figure class="portrait monogram" aria-hidden="true"><span>P</span><small>Back for summer</small></figure>
+        <h3>Pani</h3>
+        <span class="label role">Emerging Stylist</span>
+        <p>Pani is back from Australia for the summer, and we’re so excited to welcome her to Manaaki Hair again! With four years of experience, she’s confident in the salon essentials and continuing to grow her skills.</p>
+        <p class="iwi">A lovely choice if you’re looking for great hair at a more accessible price over the busy summer season.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sheet" id="menu">
+    <div class="head">
+      <span class="label">Service menu &amp; pricing</span>
+      <h2>Colour, cuts, keratin <em>&amp; more</em></h2>
+      <div class="rule"></div>
+    </div>
+    <p class="menu-note">Prices vary by stylist and are based on experience and expertise. They are a guide, and additional charges may apply if hair is thick or long. Unsure what to book? Call or email us and we’ll help you choose the right service.</p>
+
+    <div class="stylists">
+      <article class="stylist">
+        <div class="sh">
+          <span class="label">Emerging Stylist</span>
+          <h3>Pani</h3>
+        </div>
+        <div class="group">
+          <h4>Colour</h4>
+          <div class="row"><span>Root Retouch</span><span>$75</span></div>
+          <div class="row"><span>Global Colour<span class="tiers">Short · Medium · Long</span></span><span>$95 · $120 · $140</span></div>
+        </div>
+        <div class="group">
+          <h4>Blowaves</h4>
+          <div class="row"><span>Blowave<span class="tiers">Short · Medium · Long</span></span><span>$55 · $65 · $75</span></div>
+        </div>
+        <p class="fine">Pricing depends on hair thickness and length. Pani works certain dates, so contact us if you’d like to book with her outside her usual hours.</p>
+      </article>
+
+      <article class="stylist">
+        <div class="sh">
+          <span class="label">Senior Stylist</span>
+          <h3>Shayla</h3>
+        </div>
+        <div class="group">
+          <h4>Colour + highlight packages</h4>
+          <div class="row"><span>Retouch (Tint)</span><span>$87</span></div>
+          <div class="row"><span>Global<span class="tiers">Short · Medium · Long</span></span><span>$99 · $125 · $160</span></div>
+          <div class="row"><span>Toner / Gloss</span><span>from $85</span></div>
+          <div class="row"><span>Partial Highlights, Toner &amp; Blowave</span><span>from $139</span></div>
+          <div class="row"><span>Half Highlights, Toner &amp; Blowave</span><span>from $255</span></div>
+          <div class="row"><span>Full Highlights, Toner &amp; Blowave</span><span>from $300</span></div>
+          <div class="row"><span>Balayage, Toner &amp; Blowave</span><span>from $350</span></div>
+          <div class="row"><span>Regrowth Bleach &amp; Toner (up to 6 weeks)</span><span>from $225</span></div>
+          <div class="row"><span>Full Bleach</span><span>Enquire</span></div>
+        </div>
+        <div class="group">
+          <h4>Cut &amp; style</h4>
+          <div class="row"><span>Fringe Trim</span><span>$20</span></div>
+          <div class="row"><span>Child 11 &amp; under dry cut (blunt, no layers)</span><span>$35</span></div>
+          <div class="row"><span>Child Cut, wash &amp; blowave</span><span>$55</span></div>
+          <div class="row"><span>Cut &amp; Style (includes wash &amp; blowave)</span><span>$85</span></div>
+          <div class="row"><span>Custom Cut &amp; Style<span class="tiers">Short–Medium · Long</span></span><span>$95 · $125</span></div>
+          <div class="row"><span>Wash &amp; Blowave<span class="tiers">Short–Medium · Long</span></span><span>$65 · $85</span></div>
+          <div class="row"><span>Dry-Off</span><span>$5</span></div>
+          <div class="row"><span>Add-on straightening or curling irons</span><span>from $35</span></div>
+        </div>
+        <div class="group">
+          <h4>Keratin treatment</h4>
+          <div class="row"><span>Keratin<span class="tiers">Short · Medium · Long</span></span><span>$120 · $150 · from $200</span></div>
+        </div>
+        <p class="fine">Thick or long hair is additional. “From” pricing depends on hair thickness and length.</p>
+      </article>
+
+      <article class="stylist">
+        <div class="sh">
+          <span class="label">Advanced Stylist</span>
+          <h3>Liana</h3>
+        </div>
+        <div class="group">
+          <h4>Colour + packages</h4>
+          <div class="row"><span>Retouch (Tint)</span><span>$89</span></div>
+          <div class="row"><span>Global<span class="tiers">Short · Medium · Long</span></span><span>$110 · $130 · $170</span></div>
+          <div class="row"><span>Toner / Gloss</span><span>from $95</span></div>
+          <div class="row"><span>Partial, Toner &amp; Blowave</span><span>from $165</span></div>
+          <div class="row"><span>Half Highlights, Toner &amp; Blowave</span><span>from $275</span></div>
+          <div class="row"><span>Full Highlights, Toner &amp; Blowave</span><span>from $325</span></div>
+          <div class="row"><span>Balayage</span><span>from $400</span></div>
+          <div class="row"><span>Regrowth Bleach &amp; Toner (up to 6 weeks)</span><span>from $255</span></div>
+          <div class="row"><span>Full Bleach</span><span>Enquire</span></div>
+        </div>
+        <div class="group">
+          <h4>Cut &amp; style</h4>
+          <div class="row"><span>Fringe Trim</span><span>$20</span></div>
+          <div class="row"><span>Child 11 &amp; under dry cut (blunt, no layers)</span><span>$37</span></div>
+          <div class="row"><span>Seniors Cut</span><span>$38</span></div>
+          <div class="row"><span>Cut &amp; Style (includes wash &amp; blowave)</span><span>$95</span></div>
+          <div class="row"><span>Custom Cut &amp; Style<span class="tiers">Short · Medium–Long</span></span><span>$105 · $135</span></div>
+          <div class="row"><span>Wash &amp; Blowave<span class="tiers">Short · Medium–Long · Extra Long</span></span><span>$65 · $85 · $105</span></div>
+          <div class="row"><span>Dry-Off</span><span>$5</span></div>
+          <div class="row"><span>Add-on straightening or curling irons</span><span>from $40</span></div>
+        </div>
+        <div class="group">
+          <h4>Keratin treatment</h4>
+          <div class="row"><span>Keratin<span class="tiers">Short · Medium · Long</span></span><span>$125 · $160 · from $300</span></div>
+        </div>
+        <p class="fine">Thick or long hair is additional. Pricing depends on hair thickness and length.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sheet" id="offers">
+    <div class="head">
+      <span class="label">Current offers</span>
+      <h2>A little something <em>for you</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="offers">
+      <article class="offer">
+        <span class="label">Refer a friend</span>
+        <h3>$20 for them,<br><em>$20 for you</em></h3>
+        <p>Your friend receives $20 off their first visit when they mention your name, and we’ll add a $20 credit for you to use on your next visit.</p>
+      </article>
+      <article class="offer">
+        <span class="label">Spring Refresh Package</span>
+        <h3>Freshen up <em>for spring</em></h3>
+        <p>Hair feeling dull after winter? This package is for you.</p>
+        <ul>
+          <li>12 foils</li>
+          <li>Retouch + gloss toner</li>
+          <li>Intensive repair treatment</li>
+          <li>Blowave style</li>
+        </ul>
+        <p class="big">All for $179</p>
+      </article>
+    </div>
+    <p style="text-align:center;margin-top:40px"><a class="btn" href="https://bookings.gettimely.com/manaakihairandbeauty2/bb/book" target="_blank" rel="noopener">Book your visit</a></p>
+  </section>
+
+  <section class="sheet" id="reviews">
+    <div class="head">
+      <span class="label">Kind words</span>
+      <h2>What our <em>clients</em> say</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="reviews">
+      <blockquote>
+        <p>My elderly Mum had such a wonderful experience with 2 of the hairdressers. They looked after her making sure she was comfortable, made her a cup of tea and generally at home. She said she feels like a million dollars. We will be back for sure. Ngaa mihi</p>
+        <cite>Carlene</cite>
+      </blockquote>
+      <blockquote>
+        <p>Always a great time at Manaaki, came in with an actual bush head and left with the cutest summer appropriate curly girl cut! Che Liana &lt;3</p>
+        <cite>Zoe</cite>
+      </blockquote>
+      <blockquote>
+        <p>As always the level of execution is remarkable. The staff here deliver exceptional results. Highly recommend.</p>
+        <cite>Hoki</cite>
+      </blockquote>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="bronze-line"></div>
+  <div class="wrap foot">
+    <div>
+      <span class="mark">MANAAKI</span>
+      <p>92a Mountain Road, Māngere Bridge,<br>Tāmaki Makaurau Auckland 2022</p>
+    </div>
+    <div>
+      <h4>Salon hours</h4>
+      <ul>
+        <li>Tue – Thu &nbsp; 9am – 5pm</li>
+        <li>Friday &nbsp; 9.30am – 7pm</li>
+        <li>Saturday &nbsp; 9am – 3pm</li>
+      </ul>
+      <p style="font-size:13px;margin-top:10px">Hours may change without notice. Public holidays may affect these times.</p>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul>
+        <li>(09) 281 1467</li>
+        <li>bookings@manaakihair.co.nz</li>
+      </ul>
+      <p style="margin-top:16px"><a class="btn light" href="https://bookings.gettimely.com/manaakihairandbeauty2/bb/book" target="_blank" rel="noopener">Book online</a></p>
+    </div>
+  </div>
+  <div class="olive">Tag us in your photos &nbsp;·&nbsp; Manaaki Hair &amp; Beauty</div>
+</footer>
+<script>
+(function(){var m=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');if(m&&m.matches){document.querySelectorAll('.clip video, .banner video').forEach(function(v){v.removeAttribute('autoplay');v.pause();v.controls=true;});}})();
+</script>
+</body>
+</html>
